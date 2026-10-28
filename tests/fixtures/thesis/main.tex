@@ -1,0 +1,32 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\usepackage{hyperref}
+\usepackage[nameinlink]{cleveref}
+\addbibresource{references.bib}
+\graphicspath{{figures/}}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}[1]{\operatorname{Var}\left(#1\right)}
+
+\title{Prediction Markets and Price Discovery}
+\author{A. Student}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\include{chapters/introduction}
+\include{chapters/methods}
+
+\printbibliography
+\end{document}

@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "latexlab"
+version = "0.1.0"
+description = "A local, offline, Overleaf-style LaTeX editor with GitHub sync."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: Text Editors",
+    "Topic :: Text Processing :: Markup :: LaTeX",
+]
+
+[project.scripts]
+latexlab = "latexlab.cli:main"
+
+[project.gui-scripts]
+latexlab-gui = "latexlab.cli:main"
+
+[tool.setuptools]
+packages = ["latexlab"]
+
+[tool.setuptools.package-data]
+latexlab = ["static/*", "static/assets/*", "data/*"]

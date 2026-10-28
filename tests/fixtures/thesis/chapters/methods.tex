@@ -1,0 +1,26 @@
+\chapter{Methods}\label{ch:methods}
+
+\section{Model}
+Let $p_t$ denote the price of a binary contract at time $t$. Then
+\begin{equation}\label{eq:price}
+  p_t = \E\left[ \mathbf{1}\{X = 1\} \mid \mathcal{F}_t \right].
+\end{equation}
+
+\begin{theorem}\label{thm:martingale}
+The price process $(p_t)$ is a martingale with $\Var{p_t} \le \tfrac14$.
+\end{theorem}
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{lrr}
+    \toprule
+    Market & Volume & Spread \\
+    \midrule
+    Election & 1{,}204 & 0.02 \\
+    Sports   &   873 & 0.04 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Summary statistics.}\label{tab:summary}
+\end{table}
+
+The full derivation follows \textcite{manski2006interpreting}.

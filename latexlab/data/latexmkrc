@@ -1,0 +1,21 @@
+# LaTeX Lab defaults, loaded after your project's own latexmkrc (if any).
+# Mirrors the extra tools Overleaf runs automatically.
+
+# glossaries / acronyms
+add_cus_dep('glo', 'gls', 0, 'latexlab_makeglossaries');
+add_cus_dep('acn', 'acr', 0, 'latexlab_makeglossaries');
+add_cus_dep('slo', 'sls', 0, 'latexlab_makeglossaries');
+sub latexlab_makeglossaries {
+    my ($base_name, $path) = fileparse($_[0]);
+    my @args = ('-q', $base_name);
+    unshift @args, ('-d', $path) if $path ne '' && $path ne './';
+    return system('makeglossaries', @args);
+}
+
+# nomencl
+add_cus_dep('nlo', 'nls', 0, 'latexlab_makenomenclature');
+sub latexlab_makenomenclature {
+    return system("makeindex \"$_[0].nlo\" -s nomencl.ist -o \"$_[0].nls\"");
+}
+
+push @generated_exts, 'glo', 'gls', 'glg', 'acn', 'acr', 'alg', 'slo', 'sls', 'slg', 'ist', 'nlo', 'nls', 'nlg';

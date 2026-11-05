@@ -40,8 +40,8 @@ winget install --id Git.Git -e
 **4. Get LaTeX Lab and start it:**
 
 ```powershell
-git clone https://github.com/<you>/latexlab.git
-cd latexlab
+git clone https://github.com/duresh08/latex-local.git
+cd latex-local
 py -m pip install .
 latexlab shortcut      # adds "LaTeX Lab" to your Desktop and Start menu
 ```
